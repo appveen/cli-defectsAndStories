@@ -1,0 +1,29 @@
+{
+  "name": "cli-defectsAndStories",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/appveen/cli-defectsAndStories.git"
+  },
+  "keywords": [],
+  "author": "Jerry <developer.jerrymannel@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/appveen/cli-defectsAndStories/issues"
+  },
+  "homepage": "https://github.com/appveen/cli-defectsAndStories#readme",
+  "dependencies": {
+    "@appveen/ds-sdk": "^1.0.2",
+    "axios": "^0.21.1",
+    "cli-table3": "^0.6.0",
+    "colors": "^1.4.0",
+    "dotenv": "^10.0.0",
+    "inquirer": "^8.1.2",
+    "inquirer-autocomplete-prompt": "^1.4.0"
+  }
+}
