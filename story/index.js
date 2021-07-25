@@ -22,14 +22,27 @@ async function getDefectsBasedOnRelease(release) {
 		count: defectCount
 	});
 	display(columnNames, columns, colWidth, stories)
-}
+};
 
 async function entryPoint() {
 	let selection = await menu.select("Select:", ["vNext", "Backlog", "Other release"])
 	if(selection == "vNext") await getDefectsBasedOnRelease("vNext")
-}
+};
 
 module.exports = async () => {
 	storyDS = await ds.app.DataService(process.env.DS_STORY || 'Story');
 	await entryPoint()
-};;
+};
+
+
+// [
+//   "Identified",
+//   "In Progress",
+//   "Rejected",
+//   "Developed",
+//   "Duplicate",
+//   "Closed",
+//   "Ready for Release",
+//   "Released",
+//   "Ready for I&T"
+// ]
