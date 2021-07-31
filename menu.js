@@ -4,6 +4,7 @@ inquirer.registerPrompt('autocomplete', require('inquirer-autocomplete-prompt'))
 var e = {}
 
 e.select = async (message, options) => {
+	options.splice(options.length - 1 , 0, new inquirer.Separator(), );
   let response = await inquirer.prompt([{ type: 'list', name: 'mode', message: message, choices: options }])
   return response.mode
 };

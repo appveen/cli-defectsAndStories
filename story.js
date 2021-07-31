@@ -1,8 +1,8 @@
 const path = require("path")
-require("dotenv").config({ path: path.join(__dirname, "..", "config.env") })
-const ds = require("../dataStack")
-const menu = require("../menu")
-const display = require("../display")
+require("dotenv").config({ path: path.join(__dirname, "config.env") })
+const ds = require("./dataStack")
+const menu = require("./menu")
+const display = require("./display")
 
 let storyDS = null;
 
