@@ -32,10 +32,10 @@ async function getDefectsBasedOnRelease(release) {
 			page = page -1
 		} else defects = defectsFromAPI
 		display(columnNames, columns, colWidth, defects)
-		let option = await menu.select("Navigation > ", ["Next",  "Previous", "Display", "Exit"])
+		let option = await menu.select("Navigation > ", ["Next",  "Previous", "Display", "Back"])
 		if(option == "Next") page += 1
 		if(option == "Previous") page -= 1
-		if(option == "Exit") break
+		if(option == "Back") break
 	}
 };
 
@@ -58,20 +58,20 @@ async function getDefectsBasedOnStatus(status) {
 			page = page -1
 		} else defects = defectsFromAPI
 		display(columnNames, columns, colWidth, defects)
-		let option = await menu.select("Navigation > ", ["Next",  "Previous", "Exit"])
+		let option = await menu.select("Navigation > ", ["Next",  "Previous", "Back"])
 		if(option == "Next") page += 1
 		if(option == "Previous") page -= 1
-		if(option == "Exit") break
+		if(option == "Back") break
 	}
 };
 
 module.exports = async () => {
 	defectDS = await ds.app.DataService(process.env.DS_DEFECT || 'Defects');
 	while (true) {
-		let selection = await menu.select("Select:", ["vNext", "Open or Re-Open", "Other release", "Exit"])
+		let selection = await menu.select("Select:", ["vNext", "Open or Re-Open", "Other release", "Back"])
 		if(selection === "vNext") await getDefectsBasedOnRelease("vNext")
 		if(selection === "Open or Re-Open") await getDefectsBasedOnStatus(["Open", "Re-Open"])
-		if(selection == "Exit") break
+		if(selection == "Back") break
 	}
 };
 
